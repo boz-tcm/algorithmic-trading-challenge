@@ -1,6 +1,6 @@
 # Columbia Engineering FinTech Bootcamp 2023-06
 
-> Project: Module 11 Time-Series Challenge
+> Project: Module 14 Algorithmic-Trading-Challenge
 
 > Background: With over 200 million users, MercadoLibre is the most popular e-commerce site in Latin America.
 
@@ -21,6 +21,10 @@
 
 ## General Information
 - Our project was designed to use Scikit-learn libraries, including sklearn preprocessing, cluster, decomposition, and algorithms KMeans and PCA to analyze factors, or features, in the cryptocurrency market.
+- We examined four variations of an algorithmic trading machine learning model:
+    1. Baseline model, characterized by a notably very short training period, comprising just over 3% of the entire in-sample dataset, AND short-term moving average ('Fast') and long-term moving average ('Slow') technical trading price signals of 4 and 100 periods, respectively. `machine_learning_trading_bot_baseline.ipynb`
+    2. A training-period variation to the baseline model, increasing the training period to a more traditional 76% of the in-sample dataset (75%-80% is customary), leaving 24% of the in-sample for testing, corresponding to increasing the model's offset parameter from 3 months to 46 months!  `machine_learning_trading_bot_training_period.ipynb`
+
 
 ## Technologies Used
 - Python Version 3.10.12
