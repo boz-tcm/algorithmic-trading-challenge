@@ -2,9 +2,9 @@
 
 > Project: Module 14 Algorithmic-Trading-Challenge
 
-> Background: With over 200 million users, MercadoLibre is the most popular e-commerce site in Latin America.
+> Background: In this challenge, we assume the role of a financial advisor at one of the top five financial advisory firms in the world.  Despite our firm having heavily profited from algorithmic high-speed trading throughout its history, in recent years we have begun to struggle to adapt to new and changing markets.
 
-> Purpose: In this activity, we use our newfound Python, time-series, and Prophet skills to to find out whether the ability to predict search traffic at MercadoLibre can translate into successfully trading the stock.  
+> Purpose: The purpose of this challenge is to improve our existing algorithmic trading systems and maintain our firm's competitive advantage in the markets by enhancing our existing algorithmic trading signals with machine learning algorithms that have the ability to adapt to new data and changing conditions.
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -20,23 +20,59 @@
 <!-- * [License](#license) -->
 
 ## General Information
-- Our project was designed to use Scikit-learn libraries, including sklearn preprocessing, cluster, decomposition, and algorithms KMeans and PCA to analyze factors, or features, in the cryptocurrency market.
-- We examined four variations of an algorithmic trading machine learning model:
-    1. Baseline model, characterized by a notably very short training period, comprising just over 3% of the entire in-sample dataset, AND short-term moving average ('Fast') and long-term moving average ('Slow') technical trading price signals of 4 and 100 periods, respectively. `machine_learning_trading_bot_baseline.ipynb`
-    2. A training-period variation to the baseline model, increasing the training period to a more traditional 76% of the in-sample dataset (75%-80% is customary), leaving 24% of the in-sample for testing, corresponding to increasing the model's offset parameter from 3 months to 46 months!  `machine_learning_trading_bot_training_period.ipynb`
+- We examined a baseline algorithmic trading machine learning model, along with three tuned variations of the model designed to optimize the model.  These four models are described below:
+
+    1. Baseline model:
+        - Characterized by an atypically short training period, comprising just over 3% of the entire in-sample dataset, and;
+        - Short-term moving average ('Fast') and long-term moving average ('Slow') technical trading price signals with windows of 4 and 100 periods, respectively.
+        - See: [machine_learning_trading_bot_baseline.ipynb](machine_learning_trading_bot_baseline.ipynb)
+        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
+        - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`     
+![Screenshot depicts baseline model cumulative returns](Images/1._algo_trading_svm_model_returns_baseline_plot.png)
+
+    2. A training-period variation to the baseline model:
+        - Increased the training period to a more traditional 76% of the in-sample dataset (75%-80% is customary), leaving 24% of the in-sample for testing, corresponding to increasing the model's offset parameter from 3 months to 46 months!
+        - See: [machine_learning_trading_bot_modified_training_period.ipynb](machine_learning_trading_bot_modified_training_period.ipynb)
+        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
+        - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`   
+![Screenshot depicts cumulative returns for a variation in the baseline model's training period](Images/2._algo_trading_svm_model_returns_mod_train_period_plot.png)
+
+    3. Strategy windows variation to the baseline model:
+        - See: [machine_learning_trading_bot_modified_strategy_windows.ipynb](machine_learning_trading_bot_modified_strategy_windows.ipynb)
+        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
+        - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`   
+![Screenshot depicts cumulative returns for a variation in the baseline model's strategy windows](Images/3._algo_trading_svm_model_returns_mod_strategy_window_plot.png)
+
+    4. Optimized model for combined variation of training-period and strategy windows parameters:
+        - See: [machine_learning_trading_bot_modified_parameters_combined.ipynb](machine_learning_trading_bot_modified_parameters_combined.ipynb)
+        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
+        - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`   
+![Screenshot depicts cumulative returns for optimized model resulting from the combined variation of training period and strategy windows in the baseline model](Images/4._algo_trading_svm_model_returns_mod_parameters_combined_plot.png)
+
+    5.
+        -
+![Screenshot](Images/5._algo_trading_ada_model_returns_baseline_plot.png)
+
+    6.
+        -
+![Screenshot](Images/6._algo_trading_decision_tree_model_returns_baseline_plot.png)
+
+    7.
+        -
+![Screenshot](Images/7._algo_trading_decision_tree.png)
+
+
 
 
 ## Technologies Used
 - Python Version 3.10.12
-- Prophet Version 1.1.4
-- Jupyter Notebook within the VS Code IDE for both Jupyter Notebook 'crypto_investments.ipynb' and a README markdown file.
+- Jupyter Notebook within VS Code IDE
+- README markdown
 
 ## Features
 
 ## Screenshots
-##### `Sample project screenshot depicts comparison of KMeans clustering models for cryptocurrency scaled market data before and after feature reduction using Principal Component Analysis (PCA):`
-
-![A screenshot depicts comparison of KMeans clustering models for cryptocurrency scaled market data before and after feature reduction using Principal Component Analysis (PCA).](Images/final_analysis_cluster_comparisons.png)
+- [Refer to General Information Section](#general-information)
 
 ## Setup
 - GitHub Repository
@@ -45,22 +81,39 @@
         - [GitHub Repository](git@github.com:boz-tcm/unsupervised-learning-challenge.git)
 - Python Standard Library (Version 3.10.12)
 - Python Libraries and Modules:
-    - prophet 1.1.4
-    - pathlib and Path function
+    - holoviews
     - hvplot.pandas
-    - sklearn.preprocessing and StandardScaler object
-    - sklearn.cluster and KMeans object
-    - sklearn.decomposition and PCA object
+    - IPython.display and Image
+    - matplotlib and pyplot
+    - pandas
+    - pandas.tseries.offsets and DateOffset
+    - pathlib and Path
+    - phantomjs
+    - pillow
+    - pydotplus
+    - selenium
+    - sklearn.ensemble and AdaBoostClassifier
+    - sklearn.metrics and classification_report
+    - sklearn.preprocessing and StandardScaler
+    - sklearn.svm and SVC
+    - sklearn and tree
+    - tensorflow
+    - tensorflow-metal
+    - Installation packages reference for virtual environment .venv on Mac Silicon (M1), including tensorflow-metal:
+        - https://developer.apple.com/metal/tensorflow-plugin/
+    
 - Jupyter Notebook(s):
-    - name: 'crypto_investments.ipynb'
-    - location: 'unsupervised-learning-challenge/'
+    - [machine_learning_trading_bot_baseline.ipynb](machine_learning_trading_bot_baseline.ipynb)
+    - [machine_learning_trading_bot_modified_training_period.ipynb](machine_learning_trading_bot_modified_training_period.ipynb)
+    - [machine_learning_trading_bot_modified_strategy_windows.ipynb](machine_learning_trading_bot_modified_strategy_windows.ipynb)
+    - [machine_learning_trading_bot_modified_parameters_combined.ipynb](machine_learning_trading_bot_modified_parameters_combined.ipynb)
 - Data
-    - location: 'unsupervised-learning-challenge/Resources/'
+    - [emerging_markets_ohlcv.csv](Resources/emerging_markets_ohlcv.csv)
 - Images
-    - location: 'unsupervised-learning-challenge/Images'
+    - location: [Images](Images)
 
 ## Usage
-The script is run in the Jupyter Notebook 'crypto_investments.ipynb', within the 'unsupervised-learning-challenge' directory, executed using the Notebook environment's 'Run All Cells...' command.
+The scripts are run in the project's four Jupyter Notebooks cited in both [General Instructions](#general-instructions) and [Setup](#setup), located within the 'algorithmic-trading-challenge' repository's root directory, executed using the Notebook environments' command 'Run All Cells...'.
 
 ## Project Status
 Project is: _complete
