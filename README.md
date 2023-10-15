@@ -30,34 +30,38 @@
         - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`     
 ![Screenshot depicts baseline model cumulative returns](Images/1._algo_trading_svm_model_returns_baseline_plot.png)
 
-    2. A training-period variation to the baseline model:
+            `From the perspective of performance, the baseline strategy returns appear on their face impressive, exceeding by more than 9% returns from a simple buy-and-hold strategy.  However, closer examination of the classification report for the model's testing data reveals the overall model accuracy was only 55%, or that only just over half the time the model was picking up the target trade signal (-1 target label defined as sell, +1 target label defined as buy).  The recall for the sell signal was particulary poor, with the model only picking up the sell signal 4% of the time.  The training window is unrealistically short at just 3 months, representing just over 3% of the in-sample trading data, and the indications or results are likely unreliable and a stronger indication and lesson of data mining than robust model performance.`
+
+    2. A training-period variation in the baseline model:
         - Increased the training period to a more traditional 76% of the in-sample dataset (75%-80% is customary), leaving 24% of the in-sample for testing, corresponding to increasing the model's offset parameter from 3 months to 46 months!
         - See: [machine_learning_trading_bot_modified_training_period.ipynb](machine_learning_trading_bot_modified_training_period.ipynb)
-        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
-        - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`   
+        - `Question: What impact resulted from increasing or decreasing the training window?`
+        - `Answer: 
 ![Screenshot depicts cumulative returns for a variation in the baseline model's training period](Images/2._algo_trading_svm_model_returns_mod_train_period_plot.png)
 
-    3. Strategy windows variation to the baseline model:
+    3. Strategy windows variation in the baseline model:
         - See: [machine_learning_trading_bot_modified_strategy_windows.ipynb](machine_learning_trading_bot_modified_strategy_windows.ipynb)
-        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
+        - `Question: What impact resulted from increasing or decreasing either or both of the SMA windows?`
         - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`   
 ![Screenshot depicts cumulative returns for a variation in the baseline model's strategy windows](Images/3._algo_trading_svm_model_returns_mod_strategy_window_plot.png)
 
     4. Optimized model for combined variation of training-period and strategy windows parameters:
         - See: [machine_learning_trading_bot_modified_parameters_combined.ipynb](machine_learning_trading_bot_modified_parameters_combined.ipynb)
-        - `Question: Write your conclusions about the performance of the baseline trading algorithm.`
+        - `Question: Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your `README.md` file.`
         - `Answer: For the testing period from 2015-07-06 to 2021-01-22, the cumulative returns for the baseline strategy (SVM model) exceeded actual buy-hold returns by 9.44% (1.518/1.387), as shown below:`   
 ![Screenshot depicts cumulative returns for optimized model resulting from the combined variation of training period and strategy windows in the baseline model](Images/4._algo_trading_svm_model_returns_mod_parameters_combined_plot.png)
 
-    5.
+- We evaluated a New Machine Learning Classifier to contrast with the base SVM SVC model.  Two alternative models were examined:
+    
+    5. AdaBoost Machine Learning Classifier:
         -
 ![Screenshot](Images/5._algo_trading_ada_model_returns_baseline_plot.png)
 
-    6.
+    6. Decision Tree Machine Learning Classifier:
         -
 ![Screenshot](Images/6._algo_trading_decision_tree_model_returns_baseline_plot.png)
 
-    7.
+    7. Decision Tree for our Decision Tree Machine Learning Classifier Model:
         -
 ![Screenshot](Images/7._algo_trading_decision_tree.png)
 
