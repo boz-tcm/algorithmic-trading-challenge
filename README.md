@@ -81,9 +81,9 @@
 
 ## Setup
 - GitHub Repository
-    - name: 'unsupervised-learning-challenge'
+    - name: 'algorithmic-trading-challenge'
     - location: uploaded to Bootcamp homework submission online portal and available publicly at:
-        - [GitHub Repository](git@github.com:boz-tcm/unsupervised-learning-challenge.git)
+        - [GitHub Repository](https://github.com/boz-tcm/algorithmic-trading-challenge)
 - Python Standard Library (Version 3.10.12)
 - Python Libraries and Modules:
     - holoviews
